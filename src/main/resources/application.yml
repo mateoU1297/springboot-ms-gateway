@@ -37,3 +37,9 @@ spring:
         filters:
           - StripPrefix=2
           - AddRequestHeader=token-request, 123456
+      - id: servicio-usuarios
+        uri: lb://servicio-usuarios
+        predicates:
+          - Path=/api/usuarios/**
+        filters:
+          - StripPrefix=2
